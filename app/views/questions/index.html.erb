@@ -1,5 +1,12 @@
-<h1>Articles and questions</h1>
+<div class="home">
 
+<h1>Welcome to Elite News</h1>
+
+<%= image_tag "elite_news.jpg" %>
+<br>
+
+<h2> Available Articles and questions</h2>
+</div>
   <ol>
     <% @questions.each do |question| %>
       <li><%= link_to question.title, question_path(question) %>
@@ -11,6 +18,7 @@
     <br>
     <% end %>
   </ol>
+
 
 <hr>
  <%= link_to "New Question", new_question_path %>
