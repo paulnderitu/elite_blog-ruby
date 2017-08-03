@@ -1,7 +1,7 @@
-<h1>New question</h1>
+<h1>Edit Question</h1>
 
-<% if @question.errors.any? %>
-    <h3>Oops there were some errors. Please try again:</h3>
+  <% if @question.errors.any? %>
+    <h3>Please fix these errors:</h3>
     <ul>
       <% @question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,9 +9,8 @@
     </ul>
   <% end %>
 
-
   <%= form_for @question do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
-    <%= f.submit  %>
+    <%= f.submit %>
   <% end %>
