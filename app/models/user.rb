@@ -1,2 +1,3 @@
-class Question < ActiveRecord::Base
+class User < ActiveRecord::Base
+  has_many :answers
 end
