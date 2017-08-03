@@ -17,7 +17,8 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path
+      flash[:notice] = 'Discussion added successfully!'
+      redirect_to questions_path(@question)
     else
       render :new
     end
@@ -31,7 +32,8 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update(question_params)
-      redirect_to questions_path
+      flash[:notice] = 'Discussion updated successfully!'
+      redirect_to questions_path(@question)
     else
       render :edit
     end
@@ -40,7 +42,8 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to questions_path
+    flash[:notice] = 'Discussion destroyed successfully!'
+    redirect_to questions_path(@question)
   end
 
   private
