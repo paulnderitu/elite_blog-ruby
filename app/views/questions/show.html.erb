@@ -1,7 +1,7 @@
 
 
 <h1><%= @question.title %></h1>
-
+<a href="<%= @question.link %>"><%= @question.title%></a>
 <% if @question.answers.any? %>
 <h4>Here are the answers to this article: </h4>
 

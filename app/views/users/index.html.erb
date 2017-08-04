@@ -2,11 +2,11 @@
 
   <ul>
     <% @users.each do |user| %>
-      <li><%= user.name %></li>
+
       <li><%= link_to user.name, user_path(user) %></li>
     <% end %>
   </ul>
 
   <hr>
 
-  <%= link_to "New User", new_user_path %>
+    <%= link_to "Add User", new_user_path %>
