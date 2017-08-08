@@ -3,6 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   has_many :answers
   has_many :questions
+  has_secure_password
 
   # users.password_hash in the database is a :string
   include bcrypt
