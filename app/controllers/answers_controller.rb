@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-  before_filter :authorize, only: %i[edit update]
   def new
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new

@@ -1,6 +1,4 @@
 class QuestionsController < ApplicationController
-  before_filter :authorize, only: %i[edit update]
-
   def index
     @questions = Question.all
   end
