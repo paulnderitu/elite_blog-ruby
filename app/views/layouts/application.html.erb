@@ -48,7 +48,16 @@ crossorigin="anonymous"></script>
       <li><a href="#">summit</a></li>
 </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><<%= link_to "Sign Up", new_user_path%><%= link_to "Log In", new_session_path%></li>
+
+      <div class="user_tab">
+      <% if current_user %>
+        Logged in as <%= current_user.username %>
+        <%= link_to "Log Out", session_path("current"), method: "delete" %>
+        <% else %>
+        <%= link_to "Sign Up", new_user_path%> Or
+        <%= link_to "Log In", new_session_path%>
+        <% end %>
+        </div>
 
     </ul>
   </div><!-- /.navbar-collapse -->
@@ -56,6 +65,14 @@ crossorigin="anonymous"></script>
 </nav>
 </div>
 <div class="app">
+  <div class="user_tab">
+  <% if current_user %>
+    Logged in as <%= current_user.username %>
+    <% else %>
+    <%= link_to "Sign Up", new_user_path%> Or
+    <%= link_to "Log In", new_session_path%>
+    <% end %>
+    </div>
 
     <%= flash[:alert] %>
     <%= flash[:notice] %>
